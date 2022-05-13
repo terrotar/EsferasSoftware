@@ -4,6 +4,10 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+fastapi = {extras = ["all"], version = "*"}
+sqlalchemy = "*"
+validate-docbr = "*"
+email-validator = "*"
 
 [dev-packages]
 
