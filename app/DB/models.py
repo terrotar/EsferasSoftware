@@ -15,4 +15,4 @@ class Contacts(Base):
     last_name = sql.Column(sql.String(), nullable=False)
     cpf = sql.Column(sql.String(), unique=True, default="")
     email = sql.Column(sql.String(), unique=True, default="")
-    phone = sql.Column(sql.Integer(), unique=True, nullable=False)
+    phone = sql.Column(sql.String(), unique=True, nullable=False)

@@ -7,9 +7,9 @@ import pydantic as pydantic
 class ContactsBase(pydantic.BaseModel):
     name: str
     last_name: str
-    cpf: Optional[str] = None
+    cpf: Optional[int] = None
     email: Optional[str] = None
-    phone: int
+    phone: str
 
 
 class ContactsCreate(ContactsBase):

@@ -13,8 +13,8 @@ router = APIRouter(prefix='/contacts',
 
 
 # Get all contacts
-@router.get("/all")
-async def read_contacts(db: Session = Depends(database.get_db)):
+@router.get("/all", response_model=list[schemas.Contacts])
+async def read_contacts(skip: int = 0, limit: int = 50, db: Session = Depends(database.get_db)):
 
     all_contacts = contacts.get_all_contacts(db)
 
@@ -38,5 +38,19 @@ async def create_new_contact(contact: schemas.ContactsCreate, db: Session = Depe
 
     raise HTTPException(
         status_code=400,
-        detail="Database is empty"
+        detail="Could not create a new contact."
     )
+
+
+# Delete a contact
+@router.delete("/delete/{contact_id}", response_model=schemas.Contacts)
+def delete_contact_by_id(contact_id: int, db: Session = Depends(database.get_db)):
+
+    # Check if exists that contact
+    db_contact = contacts.get_contact_by_id(contact_id=contact_id, db=db)
+    if db_contact:
+
+        db_contact = contacts.delete_contact(contact_id=contact_id, db=db)
+        return db_contact
+
+    raise HTTPException(status_code=404, detail="Contact not found.")
