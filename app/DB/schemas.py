@@ -15,6 +15,9 @@ class ContactsBase(pydantic.BaseModel):
 class ContactsCreate(ContactsBase):
     pass
 
+    class Config:
+        orm_mode = True
+
 
 class Contacts(ContactsBase):
     id: int
