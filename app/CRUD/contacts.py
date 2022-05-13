@@ -24,6 +24,7 @@ resolver = caching_resolver(timeout=10)
 def check_cpf(doc):
 
     try:
+
         doc = cpf.mask(doc)
         checker = cpf.validate(doc)
 

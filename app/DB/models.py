@@ -11,8 +11,8 @@ class Contacts(Base):
 
     # Attributes
     id = sql.Column(sql.Integer(), primary_key=True, autoincrement=True)
-    name = sql.Column(sql.String(30), nullable=False)
-    last_name = sql.Column(sql.String(30), nullable=False)
-    cpf = sql.Column(sql.String(14), unique=True, default="")
+    name = sql.Column(sql.String(), nullable=False)
+    last_name = sql.Column(sql.String(), nullable=False)
+    cpf = sql.Column(sql.String(), unique=True, default="")
     email = sql.Column(sql.String(), unique=True, default="")
     phone = sql.Column(sql.Integer(), unique=True, nullable=False)
