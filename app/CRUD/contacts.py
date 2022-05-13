@@ -202,3 +202,59 @@ def delete_contact(contact_id: int, db: Session):
     db.delete(db_contact)
     db.commit()
     return db_contact
+
+
+# Update a contact by it's ID
+def update_contact(db_contact: schemas.ContactsCreate, contact: schemas.ContactsCreate, db: Session):
+
+    try:
+        # Validate size of phone number
+        phone_checker = check_phone(contact)
+
+        if(False not in phone_checker):
+
+            # CPF and Email Checkers
+            cpf_checker = check_cpf(contact.cpf)
+            email_checker = check_email(contact)
+            # print(cpf_checker, email_checker)
+
+            if(cpf_checker is True and False not in email_checker):
+
+                db_contact.name = contact.name
+                db_contact.last_name = contact.last_name
+                db_contact.cpf = contact.cpf
+                db_contact.email_01 = contact.email_01
+                db_contact.email_02 = contact.email_02
+                db_contact.email_03 = contact.email_03
+                db_contact.phone_01 = contact.phone_01
+                db_contact.phone_02 = contact.phone_02
+                db_contact.phone_03 = contact.phone_03
+
+                db.commit()
+                db.refresh(db_contact)
+
+                return db_contact
+
+            else:
+                raise NameError
+
+        else:
+            raise ValueError
+
+    except NameError:
+        raise HTTPException(
+            status_code=400,
+            detail="CPF or Email invalid."
+        )
+
+    except ValueError:
+        raise HTTPException(
+            status_code=400,
+            detail="Phone must have at least 8 digits."
+        )
+
+    except Exception:
+        raise HTTPException(
+            status_code=400,
+            detail="Could not update contact."
+    )

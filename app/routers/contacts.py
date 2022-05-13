@@ -80,3 +80,21 @@ def delete_contact_by_id(contact_id: int, db: Session = Depends(database.get_db)
         return db_contact
 
     raise HTTPException(status_code=404, detail="Contact not found.")
+
+
+# Update a new contact
+@router.put("/update/{contact_id}", response_model=schemas.Contacts)
+async def update_contact_by_id(contact: schemas.ContactsCreate, contact_id: int, db: Session = Depends(database.get_db)):
+
+    # Check if exists that contact
+    db_contact = contacts.get_contact_by_id(contact_id=contact_id, db=db)
+
+    if db_contact:
+        updated_db = contacts.update_contact(db_contact=db_contact, contact=contact, db=db)
+
+        return updated_db
+
+    raise HTTPException(
+        status_code=400,
+        detail="Could not update contact."
+    )
