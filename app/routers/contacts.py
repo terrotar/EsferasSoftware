@@ -13,7 +13,7 @@ router = APIRouter(prefix='/contacts',
 
 
 # Get all contacts
-@router.get("/all", response_model=list[schemas.Contacts])
+@router.get("/read/all", response_model=list[schemas.Contacts])
 async def read_contacts(skip: int = 0, limit: int = 50, db: Session = Depends(database.get_db)):
 
     all_contacts = contacts.get_all_contacts(db)
@@ -25,6 +25,32 @@ async def read_contacts(skip: int = 0, limit: int = 50, db: Session = Depends(da
         status_code=400,
         detail="Database is empty"
     )
+
+
+# Get a contact by it's ID
+@router.get("/read/id/{contact_id}", response_model=schemas.Contacts)
+async def read_contact_by_id(contact_id: int, db: Session = Depends(database.get_db)):
+
+    # Check if exists that contact
+    db_contact = contacts.get_contact_by_id(contact_id=contact_id, db=db)
+    if db_contact:
+
+        return db_contact
+
+    raise HTTPException(status_code=404, detail="Contact not found.")
+
+
+# Get a contact by it's phone
+@router.get("/read/phone/{contact_phone}", response_model=schemas.Contacts)
+async def read_contact_by_phone(contact_phone: str, db: Session = Depends(database.get_db)):
+
+    # Check if exists that contact
+    db_contact = contacts.get_contact_by_phone(contact_phone=contact_phone, db=db)
+    if db_contact:
+
+        return db_contact
+
+    raise HTTPException(status_code=404, detail="Contact not found.")
 
 
 # Create a new contact
