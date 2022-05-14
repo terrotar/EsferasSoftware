@@ -59,17 +59,22 @@ def check_phone(contact: schemas.ContactsBase):
 
 
 # Cpf Checker
-def check_cpf(doc: int):
+def check_cpf(doc: str):
 
     try:
 
-        doc = cpf.mask(str(doc))
-        checker = cpf.validate(doc)
+        if doc != "":
 
-        if checker is True:
-            return checker
+            doc = cpf.mask(str(doc))
+            checker = cpf.validate(doc)
 
-        return False
+            if checker is True:
+                return checker
+
+            return False
+
+        else:
+            return True
 
     except Exception:
         return False
@@ -191,7 +196,7 @@ def create_contact(contact: schemas.ContactsCreate, db: Session):
     except NameError:
         raise HTTPException(
             status_code=400,
-            detail="CPF or Email invalid."
+            detail="CPF or Email invalid. For every empty email or CPF, value should be equal an empty double quotes."
         )
 
     except ValueError:

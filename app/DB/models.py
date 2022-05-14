@@ -13,7 +13,7 @@ class Contacts(Base):
     id = sql.Column(sql.Integer(), primary_key=True, autoincrement=True)
     name = sql.Column(sql.String(), nullable=False)
     last_name = sql.Column(sql.String(), nullable=False)
-    cpf = sql.Column(sql.String(), unique=True, default="")
+    cpf = sql.Column(sql.String(), default="")
     email_01 = sql.Column(sql.String(), default="")
     email_02 = sql.Column(sql.String(), default="")
     email_03 = sql.Column(sql.String(), default="")

@@ -7,7 +7,7 @@ import pydantic as pydantic
 class ContactsBase(pydantic.BaseModel):
     name: str
     last_name: str
-    cpf: Optional[int] = None
+    cpf: Optional[str] = None
     email_01: Optional[str] = None
     email_02: Optional[str] = None
     email_03: Optional[str] = None
