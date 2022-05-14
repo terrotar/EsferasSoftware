@@ -30,7 +30,10 @@ def check_phone(contact: schemas.ContactsBase):
 
         for i in range(0, len(contact_phones)):
 
-            if contact_phones[i] != "string" and contact_phones[i] != "":
+            if (i != 0) and (contact_phones[i] == "string" or contact_phones[i] == ""):
+                checker.append(True)
+
+            elif contact_phones[i].isnumeric() is True:
 
                 phone_checker = len(str(contact_phones[i]))
 
@@ -41,9 +44,15 @@ def check_phone(contact: schemas.ContactsBase):
                     checker.append(False)
 
             else:
-                checker.append(True)
+                checker.append(False)
 
         return checker
+
+    except ValueError:
+        raise HTTPException(
+            status_code=400,
+            detail="Phone must be integer."
+        )
 
     except Exception:
         return False
@@ -185,7 +194,7 @@ def create_contact(contact: schemas.ContactsCreate, db: Session):
     except ValueError:
         raise HTTPException(
             status_code=400,
-            detail="Phone must have at least 8 digits."
+            detail="Phone must be numeric and have at least 8 digits."
         )
 
     except Exception as e:
@@ -250,11 +259,11 @@ def update_contact(db_contact: schemas.ContactsCreate, contact: schemas.Contacts
     except ValueError:
         raise HTTPException(
             status_code=400,
-            detail="Phone must have at least 8 digits."
+            detail="First phone must have at least 8 digits."
         )
 
     except Exception:
         raise HTTPException(
             status_code=400,
             detail="Could not update contact."
-    )
+        )
