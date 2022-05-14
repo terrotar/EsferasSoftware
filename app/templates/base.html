@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed&family=Roboto:ital,wght@0,400;0,700;0,900;1,700&family=Work+Sans&display=swap" rel="stylesheet">
+    <link rel="icon" href="../static/images/title_icon_01.webp" type="image/icon type">
 
     {% block head %}{% endblock %}
 </head>
@@ -16,13 +17,19 @@
     <header>
         <nav class="navbar">
             <ul class="navbar_list">
-                <li><a href="#"><img class="logo_img" src="../static/images/logo_01.jpeg" alt="Imagem do logo da empresa Esferas Sotware"></a></li>
-                <li><a href="#" class="navbar_contatos">Contatos</a></li>
+                <li><a href=""><img class="logo_img" src="../static/images/logo_01.jpeg" alt="Imagem do logo da empresa Esferas Sotware"></a></li>
+                <li><a href="" class="navbar_contatos">Contatos</a></li>
                 <li><a href="" class="navbar_desenvolvedor">Desenvolvedor</a></li>
             </ul>
         </nav>
+
+    <section class="page_theme">
+        {% block content %} {% endblock %}
+    </section>
+
     </header>
 
     {% block body %}{% endblock %}
+
 </body>
 </html>
