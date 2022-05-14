@@ -17,8 +17,6 @@ templates = Jinja2Templates(directory="templates")
 
 
 @router.get("/", response_class=HTMLResponse)
-async def index(request: Request, db: Session = Depends(database.get_db)):
+async def index(request: Request):
 
-    all_contacts = contacts.get_all_contacts(db)
-
-    return templates.TemplateResponse("index.html", {"request": request, "all_contacts": all_contacts})
+    return templates.TemplateResponse("index.html", {"request": request})

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="{{ url_for('static', path='/base.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', path='../static/css/base.css') }}" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed&family=Roboto:ital,wght@0,400;0,700;0,900;1,700&family=Work+Sans&display=swap" rel="stylesheet">
@@ -12,6 +12,17 @@
     {% block head %}{% endblock %}
 </head>
 <body>
+
+    <header>
+        <nav class="navbar">
+            <ul class="navbar_list">
+                <li><a href="#"><img class="logo_img" src="../static/images/logo_01.jpeg" alt="Imagem do logo da empresa Esferas Sotware"></a></li>
+                <li><a href="#" class="navbar_contatos">Contatos</a></li>
+                <li><a href="" class="navbar_desenvolvedor">Desenvolvedor</a></li>
+            </ul>
+        </nav>
+    </header>
+
     {% block body %}{% endblock %}
 </body>
 </html>
