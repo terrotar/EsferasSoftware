@@ -65,8 +65,18 @@ def check_cpf(doc: str):
 
         if doc != "":
 
-            doc = cpf.mask(str(doc))
-            checker = cpf.validate(doc)
+            # Check if CPF is already masked
+            mask_checker = cpf.mask(doc)
+
+            print(mask_checker, doc)
+            print(mask_checker == doc is True)
+
+            if (len(mask_checker.split(".")) > 3):
+                checker = cpf.validate(doc)
+
+            else:
+                checker = cpf.validate(mask_checker)
+                doc = mask_checker
 
             if checker is True:
                 return checker
@@ -170,6 +180,9 @@ def create_contact(contact: schemas.ContactsCreate, db: Session):
             # print(cpf_checker, email_checker)
 
             if(cpf_checker is True and False not in email_checker):
+
+                if len(cpf.mask(contact.cpf).split(".")) == 3:
+                    contact.cpf = cpf.mask(contact.cpf)
 
                 # Add new contact in database
                 new_contact = models.Contacts(name=contact.name,
