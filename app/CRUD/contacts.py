@@ -30,7 +30,7 @@ def check_phone(contact: schemas.ContactsBase):
 
         for i in range(0, len(contact_phones)):
 
-            if (i != 0) and (contact_phones[i] == "string" or contact_phones[i] == ""):
+            if (i != 0) and (contact_phones[i] == ""):
                 checker.append(True)
 
             elif contact_phones[i].isnumeric() is True:
@@ -95,8 +95,11 @@ def check_email(contact: schemas.ContactsBase):
                 else:
                     checker.append(False)
 
-            else:
+            elif contact_emails[i] == "":
                 checker.append(True)
+
+            else:
+                checker.append(False)
 
         return checker
 
@@ -194,7 +197,7 @@ def create_contact(contact: schemas.ContactsCreate, db: Session):
     except ValueError:
         raise HTTPException(
             status_code=400,
-            detail="Phone must be numeric and have at least 8 digits."
+            detail='Phone_01 must be numeric and have at least 8 digits. If no other phones, value should be equal an empty double quotes.'
         )
 
     except Exception as e:
