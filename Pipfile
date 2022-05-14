@@ -8,6 +8,7 @@ fastapi = {extras = ["all"], version = "*"}
 sqlalchemy = "*"
 validate-docbr = "*"
 email-validator = "*"
+loguru = "*"
 
 [dev-packages]
 
