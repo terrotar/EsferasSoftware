@@ -1,0 +1,19 @@
+
+{% extends 'base.html' %}
+
+
+{% block head %}
+
+    <title>EsferasSoftware API</title>
+
+{% endblock %}
+
+{% block body %}
+
+    <h1>Produtos</h1>
+
+    {% for contact in all_contacts %}
+        {{ contact.name }}
+    {% endfor %}
+
+{% endblock %}
