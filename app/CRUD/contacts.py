@@ -63,13 +63,13 @@ def check_cpf(doc: str):
 
     try:
 
-        if doc != "":
+        if doc == "":
+            return True
+
+        elif doc != "":
 
             # Check if CPF is already masked
             mask_checker = cpf.mask(doc)
-
-            print(mask_checker, doc)
-            print(mask_checker == doc is True)
 
             if (len(mask_checker.split(".")) > 3):
                 checker = cpf.validate(doc)
@@ -84,7 +84,7 @@ def check_cpf(doc: str):
             return False
 
         else:
-            return True
+            return False
 
     except Exception:
         return False
@@ -181,7 +181,7 @@ def create_contact(contact: schemas.ContactsCreate, db: Session):
 
             if(cpf_checker is True and False not in email_checker):
 
-                if len(cpf.mask(contact.cpf).split(".")) == 3:
+                if (contact.cpf != "") and (len(cpf.mask(contact.cpf).split(".")) == 3):
                     contact.cpf = cpf.mask(contact.cpf)
 
                 # Add new contact in database
