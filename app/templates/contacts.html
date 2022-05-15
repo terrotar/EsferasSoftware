@@ -57,35 +57,36 @@
             {% if all_contacts %}
             <div class="contact">
                 {% for contact in all_contacts %}
-                    <p>id: {{ contact.id }}<br>
-                    Nome: {{ contact.name }}<br>
-                    Sobrenome: {{ contact.last_name }}<br>
-                    CPF: {{ contact.cpf }}<br>
-                    Email01: {{ contact.email_01 }}<br>
-                    Email02: {{ contact.email_02 }}<br>
-                    Email03: {{ contact.email_03 }}<br>
-                    Telefone01: {{ contact.phone_01 }}<br>
-                    Telefone02: {{ contact.phone_02 }}<br>
-                    Telefone03: {{ contact.phone_03 }}</p>
+                    <p><b>id:</b> {{ contact.id }}<br>
+                    <b>Nome:</b> {{ contact.name }}<br>
+                    <b>Sobrenome:</b> {{ contact.last_name }}<br>
+                    <b>CPF:</b> {{ contact.cpf }}<br>
+                    <b>Email01:</b> {{ contact.email_01 }}<br>
+                    <b>Email02:</b> {{ contact.email_02 }}<br>
+                    <b>Email03:</b> {{ contact.email_03 }}<br>
+                    <b>Telefone01:</b> {{ contact.phone_01 }}<br>
+                    <b>Telefone02:</b> {{ contact.phone_02 }}<br>
+                    <b>Telefone03:</b> {{ contact.phone_03 }}</p>
                 {% endfor %}
             {% endif %}
 
             {% if search_id %}
             <div class="contact">
-            <p>Nome: {{ search_id.name }}<br>
-                Sobrenome: {{ search_id.last_name }}<br>
-                CPF: {{ search_id.cpf }}<br>
-                Email01: {{ search_id.email_01 }}<br>
-                Email02: {{ search_id.email_02 }}<br>
-                Email03: {{ search_id.email_03 }}<br>
-                Telefone01: {{ search_id.phone_01 }}<br>
-                Telefone02: {{ search_id.phone_02 }}<br>
-                Telefone03: {{ search_id.phone_03 }}</p>
+                <p><b>id:</b> {{ search_id.id }}<br>
+                    <b>Nome:</b> {{ search_id.name }}<br>
+                    <b>Sobrenome:</b> {{ search_id.last_name }}<br>
+                    <b>CPF:</b> {{ search_id.cpf }}<br>
+                    <b>Email01:</b> {{ search_id.email_01 }}<br>
+                    <b>Email02:</b> {{ search_id.email_02 }}<br>
+                    <b>Email03:</b> {{ search_id.email_03 }}<br>
+                    <b>Telefone01:</b> {{ search_id.phone_01 }}<br>
+                    <b>Telefone02:</b> {{ search_id.phone_02 }}<br>
+                    <b>Telefone03:</b> {{ search_id.phone_03 }}</p>
             {% endif %}
 
         </div>
         {% if delete_msg %}
-                {{ delete_msg }}
+                <p>{{ delete_msg }}</p>
             {% endif %}
     </div>
 

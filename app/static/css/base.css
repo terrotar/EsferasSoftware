@@ -128,7 +128,7 @@ img.github_icon {
     height: 3rem;
     transition: 1s;
     border-radius: 3rem;
-    margin-left: 1rem;
+    margin-left: -2.5rem;
 
     -webkit-transition: background-image 0.5s ease-in-out;
     transition: background-image 0.5s ease-in-out;
