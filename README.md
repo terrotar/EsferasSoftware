@@ -26,6 +26,10 @@ Then, you just need to open a terminal and move to directory "/app" and run the 
 
 The application will start in localhost and can be open with any browser. There's two default API documentation that can be accessed with endpoint "/docs" and "/redoc".
 
+Also, the project has a docker image, which could be used to run the program more easier. To do so, simply check my [DockerHub](https://hub.docker.com/r/terrotar/esferas_software_challenge) repository, pull the image and run the command below:
+
+    sudo docker run -p 8000:8080 terrotar/esferas_software_challenge:v1
+
 ## About
 
 The development of the project was a very harsh momment. Due to it's few days to develop, I had to spend almost all days until deadline to accomplish it as I imagined to do it. The front-end wasn't part of the objectives, but I thougth it would be a nice bonus feature to implement. The company website was used as a reference to develop the style and format of API front-end part, such as buttons, colors, patterns and more.
