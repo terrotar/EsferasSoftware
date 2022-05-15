@@ -99,7 +99,7 @@ body {
     margin: 0;
     padding: 0;
     color: black;
-    margin: 3rem 0rem 3rem 9rem;
+    margin: 3rem 0rem 5rem 9rem;
 
 }
 
@@ -126,12 +126,11 @@ img.github_icon {
     top: 0.5rem;
     width: 6rem;
     height: 3rem;
-    transition: 1s;
+    transition: 0.3s;
     border-radius: 3rem;
-    margin-left: -2.5rem;
-
-    -webkit-transition: background-image 0.5s ease-in-out;
-    transition: background-image 0.5s ease-in-out;
+    margin-left: 1rem;
+    border: 1px solid #FFFFFF;
+    box-shadow: 1px 1px 3px black;
     background-image: linear-gradient(rgb(63, 131, 197) 50%, rgb(124, 183, 228) 100%);
 
 }

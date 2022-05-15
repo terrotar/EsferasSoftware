@@ -61,7 +61,7 @@ async def contatos_read_by_id(request: Request, contact_id: int, db: Session = D
         return templates.TemplateResponse("contacts.html", {"request": request, "search_id": db_contact})
 
     logger.warning(f"No contact with id {contact_id} in database.")
-    return templates.TemplateResponse("contacts.html", {"request": request, "error": f"No contact with id {contact_id} in database."})
+    return templates.TemplateResponse("contacts.html", {"request": request, "error": f"Não há contato com id {contact_id} no banco de dados."})
 
 
 # Delete contact by it's ID
@@ -74,10 +74,10 @@ async def contatos_delete_by_id(request: Request, contact_id: int, db: Session =
 
         db_contact = contacts.delete_contact(contact_id=contact_id, db=db)
         logger.success(f"Contact with id {contact_id} deleted with success!")
-        return templates.TemplateResponse("contacts.html", {"request": request, "delete_msg": f"Contact with id {contact_id} deleted with success!"})
+        return templates.TemplateResponse("contacts.html", {"request": request, "delete_msg": f"Contato com id {contact_id} deletado com sucesso!"})
 
     logger.error(f"Could not delete contact with id {contact_id}.")
-    return templates.TemplateResponse("contacts.html", {"request": request, "error": f"No contact with id {contact_id} in database."})
+    return templates.TemplateResponse("contacts.html", {"request": request, "error": f"Não há contato com id {contact_id} no banco de dados."})
 
 
 # Developer
