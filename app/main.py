@@ -18,7 +18,7 @@ app = FastAPI()
 
 
 # Configuration of static folders
-app.mount("/static", StaticFiles(directory="static"), name="static")
+app.mount("/static", StaticFiles(directory="./static"), name="static")
 
 
 # ROUTERS

@@ -109,30 +109,21 @@ body {
 
 
 footer {
-    position: absolute;
+    position: fixed;
     text-align: center;
     left: 0;
     width: 100%;
     display: inline-block;
-
     font-size: 1rem;
+    bottom: 1rem;
 }
 
-footer span {
-    transition: 0.5s;
-    color: black;
-}
-
-footer span:hover {
-    color: #3b7eff;
-    font-size: 1.1rem;
-}
 
 
 img.github_icon {
 
     position: relative;
-    top: 1rem;
+    top: 0.5rem;
     width: 6rem;
     height: 3rem;
     transition: 1s;
@@ -141,7 +132,7 @@ img.github_icon {
 
     -webkit-transition: background-image 0.5s ease-in-out;
     transition: background-image 0.5s ease-in-out;
-    transition: 0.5s;
+    background-image: linear-gradient(rgb(63, 131, 197) 50%, rgb(124, 183, 228) 100%);
 
 }
 

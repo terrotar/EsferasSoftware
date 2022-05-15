@@ -3,7 +3,7 @@
 
 
 {% block head %}
-
+<link rel="icon" href="../static/images/title_icon_01.webp" type="image/icon type">
 <link href="{{ url_for('static', path='../static/css/contacts.css') }}" rel="stylesheet">
 
     <title>Contatos</title>
@@ -32,13 +32,59 @@
 
     <div class="div_list_btn">
         <ul class="list_btn">
-            <li><a href="">Ler Contatos</a></li>
-            <li><a href="">Buscar por ID</a></li>
-            <li><a href="">Buscar por Telefone</a></li>
-            <li><a href="">Novo Contato</a></li>
-            <li><a href="">Deletar Contato</a></li>
-            <li><a href="">Atualizar Contato</a></li>
+            <li><a href="{{ url_for('contatos_read_all') }}">Ler Todos Contatos</a>
+            </li>
+            <li>
+                <form action="{{ url_for('contatos_read_by_id') }}" method="GET">
+                    <input type="number" step="1" min="1" id="contact_id" name="contact_id">
+                    <input class="submit" type="submit" value="Buscar">
+                </form>
+            </li>
+            <li>
+                <form action="{{ url_for('contatos_delete_by_id') }}" method="GET">
+                    <input type="number" step="1" min="1" id="contact_id" name="contact_id">
+                    <input class="submit" type="submit" value="Deletar">
+                </form>
+            </li>
         </ul>
+    </div>
+
+    {% if error %}
+        <p style="margin-top: 8rem;">{{ error }}</p>
+    {% endif %}
+
+    <div class="all_contacts">
+        <div class="contact">
+            {% if all_contacts %}
+                {% for contact in all_contacts %}
+                    <p>Nome: {{ contact.name }}
+                    Sobrenome: {{ contact.last_name }}
+                    CPF: {{ contact.cpf }}
+                    Email01: {{ contact.email_01 }}
+                    Email02: {{ contact.email_02 }}
+                    Email03: {{ contact.email_03 }}
+                    Telefone01: {{ contact.phone_01 }}
+                    Telefone02: {{ contact.phone_02 }}
+                    Telefone03: {{ contact.phone_03 }}</p>
+                {% endfor %}
+            {% endif %}
+
+            {% if search_id %}
+            <p>Nome: {{ search_id.name }}
+                Sobrenome: {{ search_id.last_name }}
+                CPF: {{ search_id.cpf }}
+                Email01: {{ search_id.email_01 }}
+                Email02: {{ search_id.email_02 }}
+                Email03: {{ search_id.email_03 }}
+                Telefone01: {{ search_id.phone_01 }}
+                Telefone02: {{ search_id.phone_02 }}
+                Telefone03: {{ search_id.phone_03 }}</p>
+            {% endif %}
+
+            {% if delete_msg %}
+                {{ delete_msg }}
+            {% endif %}
+        </div>
     </div>
 
 {% endblock %}

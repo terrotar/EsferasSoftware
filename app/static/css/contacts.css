@@ -30,14 +30,19 @@ ul.list_btn {
     list-style-type: none;
     position: absolute;
     display: flex;
-    margin-left: 7rem;
+    margin-left: 12rem;
 }
 
 
 ul.list_btn li {
-    display: flex;
+    display: contents;
     margin: 2rem;
-    width: 9rem;
+    width: 15rem;
+}
+
+ul.list_btn li input {
+    width: 3rem;
+    margin: 1.5rem;
 }
 
 
@@ -51,12 +56,56 @@ ul.list_btn li a {
     font-weight: 400;
     transition: 1s;
     background-image: linear-gradient(rgb(63, 131, 197) 50%, rgb(124, 183, 228) 100%);
+    width: 9rem;
+    height: 3rem;
+    margin-top: 1rem;
 }
 
 
-ul.list_btn li a:hover {
-    width: 10rem;
-    color: black;
-    font-weight: 800;
+ul.list_btn li form {
+    padding: 0rem 10rem 0rem 10rem;
 }
+
+
+ul.list_btn li input.submit {
+    color: #FFFFFF;
+    margin: 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    padding: 0.5rem;
+    border-radius: 2rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    transition: 1s;
+    background-image: linear-gradient(rgb(63, 131, 197) 50%, rgb(124, 183, 228) 100%);
+    width: 9rem;
+    border: 0px;
+}
+
+
+section.main_section div.all_contacts {
+    display: inline-block;
+    width: 80rem;
+    text-align: justify;
+    margin: 10rem 2rem 0rem 0rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+
+div.contact {
+    width: 100%;
+    position: relative;
+    margin: 0rem 0rem 0rem -12rem;
+    display: block;
+    margin-bottom: 5rem;
+    text-align: center;
+}
+
+
+div.contact p {
+    width: 90rem;
+}
+
+
 
