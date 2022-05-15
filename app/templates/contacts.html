@@ -54,37 +54,39 @@
     {% endif %}
 
     <div class="all_contacts">
-        <div class="contact">
             {% if all_contacts %}
+            <div class="contact">
                 {% for contact in all_contacts %}
-                    <p>Nome: {{ contact.name }}
-                    Sobrenome: {{ contact.last_name }}
-                    CPF: {{ contact.cpf }}
-                    Email01: {{ contact.email_01 }}
-                    Email02: {{ contact.email_02 }}
-                    Email03: {{ contact.email_03 }}
-                    Telefone01: {{ contact.phone_01 }}
-                    Telefone02: {{ contact.phone_02 }}
+                    <p>id: {{ contact.id }}<br>
+                    Nome: {{ contact.name }}<br>
+                    Sobrenome: {{ contact.last_name }}<br>
+                    CPF: {{ contact.cpf }}<br>
+                    Email01: {{ contact.email_01 }}<br>
+                    Email02: {{ contact.email_02 }}<br>
+                    Email03: {{ contact.email_03 }}<br>
+                    Telefone01: {{ contact.phone_01 }}<br>
+                    Telefone02: {{ contact.phone_02 }}<br>
                     Telefone03: {{ contact.phone_03 }}</p>
                 {% endfor %}
             {% endif %}
 
             {% if search_id %}
-            <p>Nome: {{ search_id.name }}
-                Sobrenome: {{ search_id.last_name }}
-                CPF: {{ search_id.cpf }}
-                Email01: {{ search_id.email_01 }}
-                Email02: {{ search_id.email_02 }}
-                Email03: {{ search_id.email_03 }}
-                Telefone01: {{ search_id.phone_01 }}
-                Telefone02: {{ search_id.phone_02 }}
+            <div class="contact">
+            <p>Nome: {{ search_id.name }}<br>
+                Sobrenome: {{ search_id.last_name }}<br>
+                CPF: {{ search_id.cpf }}<br>
+                Email01: {{ search_id.email_01 }}<br>
+                Email02: {{ search_id.email_02 }}<br>
+                Email03: {{ search_id.email_03 }}<br>
+                Telefone01: {{ search_id.phone_01 }}<br>
+                Telefone02: {{ search_id.phone_02 }}<br>
                 Telefone03: {{ search_id.phone_03 }}</p>
             {% endif %}
 
-            {% if delete_msg %}
+        </div>
+        {% if delete_msg %}
                 {{ delete_msg }}
             {% endif %}
-        </div>
     </div>
 
 {% endblock %}

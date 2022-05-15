@@ -89,22 +89,20 @@ section.main_section div.all_contacts {
     text-align: justify;
     margin: 10rem 2rem 0rem 0rem;
     font-size: 1.2rem;
-    font-weight: 600;
 }
 
 
 div.contact {
-    width: 100%;
+    width: 15rem;
     position: relative;
-    margin: 0rem 0rem 0rem -12rem;
+    margin: 0rem 0rem 0rem 35.5rem;
     display: block;
     margin-bottom: 5rem;
-    text-align: center;
 }
 
 
 div.contact p {
-    width: 90rem;
+    width: 15rem;
 }
 
 
