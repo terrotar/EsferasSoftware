@@ -20,3 +20,15 @@ templates = Jinja2Templates(directory="templates")
 async def index(request: Request):
 
     return templates.TemplateResponse("index.html", {"request": request})
+
+
+@router.get("/contatos", response_class=HTMLResponse)
+async def contatos(request: Request):
+
+    return templates.TemplateResponse("contacts.html", {"request": request})
+
+
+@router.get("/desenvolvedor", response_class=HTMLResponse)
+async def desenvolvedor(request: Request):
+
+    return templates.TemplateResponse("developer.html", {"request": request})

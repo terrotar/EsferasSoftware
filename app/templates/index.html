@@ -4,6 +4,8 @@
 
 {% block head %}
 
+<link href="{{ url_for('static', path='../static/css/index.css') }}" rel="stylesheet">
+
     <title>Esferas Software API</title>
 
 {% endblock %}
@@ -11,7 +13,9 @@
 
 {% block content %}
 
-    <span>Test</span>
+    <span class="content_text">
+        Bem-vindo ao desafio Esferas Software!<br><br>
+        Utilize a barra de navegação superior para navegar pelo projeto</span>
 
 {% endblock %}
 

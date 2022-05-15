@@ -1,2 +1,16 @@
 
 
+.content_text {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    background-color: transparent;
+    font-family: "Work Sans";
+    font-size: 2.5rem;
+    font-style: normal;
+    font-variant-ligatures: normal;
+    font-variant-caps: normal;
+    font-weight: 600;
+    word-spacing: normal;
+    top: 7rem;
+}
