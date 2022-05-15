@@ -14,8 +14,8 @@
 {% block content %}
 
     <span class="content_text">
-        Bem-vindo ao desafio Esferas Software!<br><br>
-        Utilize a barra de superior para navegar pelo projeto
+        Bem-vindo ao desafio Esferas Software!<br><br><br>
+        Utilize a barra superior para navegar pelo projeto
     </span>
 
 {% endblock %}
@@ -28,9 +28,16 @@
     <div class="main_text">
         <p>
             Esse desafio da empresa <a href="https://esferas.com.br/" target="_blank"><b>Esferas Software</b></a> foi desenvolvido com a 
-            linguagem Python, framework FastAPI, integração com banco de dados, logs, entre outras tecnologias. O projeto consiste basicamente em um 
+            linguagem <b>Python</b>, framework <b>FastAPI</b>, integração com banco de dados(<b>SQLAlchemy</b> e <b>SQLite3</b>), logs, entre outras tecnologias. O projeto consiste basicamente em um 
             CRUD de uma tabela chamada Contatos e é possível visualizar as documentações da API acessando os endpoints <b>"/docs"</b> e <b>"/redoc"</b>, 
-            uma implementação automática porém totalmente possível customizar fornecida pelo framework FastAPI.
+            uma implementação automática porém totalmente possível customizar fornecida pelo FastAPI.
+        </p>
+
+        <p>
+            Para essa aplicação, devido à pequena quantidade de dados a serem
+            armazenados, decidi por escolher o <b>SQLite3</b> invés do <b>PostgreSQL</b>. Normalmente tenho uma preferência para trabalhar com o <b>PostgreSQL</b> 
+            quando alguma coluna de tabela armazenará mais de um valor, pois esse banco de dados permite o tipo de dados <b>Array</b>, facilitando muito as querys e o código.
+            Porém, como a quantidade de dados é pequena, decidi que três e-mails e telefones bastaria.
         </p>
 
         <p>
@@ -41,8 +48,8 @@
         </p>
 
         <p>
-            Nem todos endpoints estão sendo contemplados na aba Contatos, principalmente por conta do tempo para desenvolver o projeto.
-            Apesar disso, da para testar a API visualmente um pouco mais do lado do cliente apesar da limitação.
+            Nem todos endpoints estão sendo contemplados na aba <b>Contatos</b>, principalmente por conta do tempo para desenvolver o projeto(quatro dias).
+            Apesar disso, da para testar a API visualmente um pouco mais do lado do cliente apesar dessa limitação.
         </p>
 
     </div>
