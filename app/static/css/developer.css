@@ -14,3 +14,12 @@
     word-spacing: normal;
     top: 10rem;
 }
+
+
+div.main_text {
+
+    display: inline-block;
+    width: 60rem;
+    text-align: justify;
+
+}

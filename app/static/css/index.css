@@ -12,5 +12,20 @@
     font-variant-caps: normal;
     font-weight: 600;
     word-spacing: normal;
-    top: 7rem;
+    top: 10rem;
+}
+
+
+div.main_text {
+
+    display: inline-block;
+    width: 60rem;
+    text-align: justify;
+
+}
+
+
+div.main_text p a {
+    text-decoration: none;
+    color: #3b7eff;
 }

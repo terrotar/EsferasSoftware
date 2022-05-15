@@ -1,8 +1,13 @@
 
+/*HTML*/
+
 html {
     margin: 0;
     padding: 0;
 }
+
+/*BODY*/
+
 
 body {
     margin: 0;
@@ -11,6 +16,9 @@ body {
     font-family: 'Work Sans', sans-serif;
     letter-spacing: -1px;
 }
+
+
+/*NAVBAR*/
 
 
 .navbar {
@@ -58,6 +66,9 @@ body {
 }
 
 
+/*PAGE THEME*/
+
+
 .page_theme {
 
     width: 100%;
@@ -75,11 +86,32 @@ body {
 }
 
 
+/*MAIN SECTION*/
+
+
+.main_section {
+
+
+    height: 50rem;
+    width: 100rem;
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    color: black;
+    margin: 3rem 0rem 3rem 9rem;
+
+}
+
+
+
+/*FOOTER*/
+
+
 footer {
     position: absolute;
     text-align: center;
     left: 0;
-    bottom: 1rem;
     width: 100%;
     display: inline-block;
 
@@ -116,6 +148,6 @@ img.github_icon {
 img.github_icon:hover {
     width: 6.5rem;
     height: 3.5rem;
+    top: 0.5rem;
     background-image: linear-gradient(rgb(63, 131, 197) 50%, rgb(124, 183, 228) 100%);
 }
-
