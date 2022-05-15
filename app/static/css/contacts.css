@@ -33,6 +33,7 @@ ul.list_btn {
     margin-left: 7rem;
 }
 
+
 ul.list_btn li {
     display: flex;
     margin: 2rem;
@@ -47,6 +48,15 @@ ul.list_btn li a {
     padding: 0.5rem;
     border-radius: 2rem;
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 400;
+    transition: 1s;
     background-image: linear-gradient(rgb(63, 131, 197) 50%, rgb(124, 183, 228) 100%);
 }
+
+
+ul.list_btn li a:hover {
+    width: 10rem;
+    color: black;
+    font-weight: 800;
+}
+
