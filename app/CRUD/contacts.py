@@ -37,7 +37,7 @@ def check_phone(contact: schemas.ContactsBase):
 
                 phone_checker = len(str(contact_phones[i]))
 
-                if phone_checker >= 8:
+                if 8 <= phone_checker <= 14:
                     checker.append(True)
 
                 else:
@@ -215,7 +215,7 @@ def create_contact(contact: schemas.ContactsCreate, db: Session):
     except ValueError:
         raise HTTPException(
             status_code=400,
-            detail='Phone_01 must be numeric and have at least 8 digits. If no other phones, value should be equal an empty double quotes.'
+            detail='Phone_01 must be numeric and have between 8 and 14 digits. If no other phones, value should be equal an empty double quotes.'
         )
 
     except Exception as e:
@@ -280,7 +280,7 @@ def update_contact(db_contact: schemas.ContactsCreate, contact: schemas.Contacts
     except ValueError:
         raise HTTPException(
             status_code=400,
-            detail="First phone must have at least 8 digits."
+            detail="First phone must have between 8 and 14 digits."
         )
 
     except Exception:
