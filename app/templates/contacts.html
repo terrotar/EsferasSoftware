@@ -55,18 +55,19 @@
 
     <div class="all_contacts">
             {% if all_contacts %}
-            <div class="contact">
                 {% for contact in all_contacts %}
-                    <p><b>id:</b> {{ contact.id }}<br>
-                    <b>Nome:</b> {{ contact.name }}<br>
-                    <b>Sobrenome:</b> {{ contact.last_name }}<br>
-                    <b>CPF:</b> {{ contact.cpf }}<br>
-                    <b>Email01:</b> {{ contact.email_01 }}<br>
-                    <b>Email02:</b> {{ contact.email_02 }}<br>
-                    <b>Email03:</b> {{ contact.email_03 }}<br>
-                    <b>Telefone01:</b> {{ contact.phone_01 }}<br>
-                    <b>Telefone02:</b> {{ contact.phone_02 }}<br>
-                    <b>Telefone03:</b> {{ contact.phone_03 }}</p>
+                <div class="contact">
+                        <p><b>id:</b> {{ contact.id }}<br>
+                        <b>Nome:</b> {{ contact.name }}<br>
+                        <b>Sobrenome:</b> {{ contact.last_name }}<br>
+                        <b>CPF:</b> {{ contact.cpf }}<br>
+                        <b>Email01:</b> {{ contact.email_01 }}<br>
+                        <b>Email02:</b> {{ contact.email_02 }}<br>
+                        <b>Email03:</b> {{ contact.email_03 }}<br>
+                        <b>Telefone01:</b> {{ contact.phone_01 }}<br>
+                        <b>Telefone02:</b> {{ contact.phone_02 }}<br>
+                        <b>Telefone03:</b> {{ contact.phone_03 }}</p>
+                </div>
                 {% endfor %}
             {% endif %}
 
@@ -82,9 +83,9 @@
                     <b>Telefone01:</b> {{ search_id.phone_01 }}<br>
                     <b>Telefone02:</b> {{ search_id.phone_02 }}<br>
                     <b>Telefone03:</b> {{ search_id.phone_03 }}</p>
-            {% endif %}
+            </div>
+        {% endif %}
 
-        </div>
         {% if delete_msg %}
                 <p>{{ delete_msg }}</p>
             {% endif %}
